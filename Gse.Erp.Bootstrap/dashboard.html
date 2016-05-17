@@ -17,14 +17,17 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Dashboard styles -->
     <link href="dashboard.css" rel="stylesheet">
-    <!-- Custom styles for navbar dropdown -->
+    <!-- Dashboard navbar dropdown styles -->
     <link href="dashboard-dropdown.css" rel="stylesheet">
       
-    <!-- Custom styles for agenda control -->
+    <!-- Agenda control styles -->
     <link href="agenda.css" rel="stylesheet">
-
+    
+    <!-- Gritter styles -->
+    <link href="css/jquery.gritter.css" rel="stylesheet">
+      
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
@@ -59,12 +62,12 @@
                         <span class="glyphicon glyphicon-bell" aria-hidden="true" style="font-size:20px;"></span>
                         <span class="badge">4</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-header">You have 4 notifications</li>
+                    <ul id="alerts" class="dropdown-menu">
+                        <li class="dropdown-header">You have 4 alerts</li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">alert#1</a></li>
-                        <li><a href="#">alert#2</a></li>
-                        <li><a href="#">alert#3</a></li>
+                        <li><a role="alert" href="#">#1 alert</a></li>
+                        <li><a role="alert" href="#">#2 alert</a></li>
+                        <li><a role="alert" href="#">#3 alert</a></li>
                     </ul>
                 </li>
             <!-- <li><a href="#">Dashboard</a></li>
@@ -345,5 +348,27 @@
     <script src="assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Gritter javascript -->
+    <script src="js/jquery.gritter.js"></script>
   </body>
 </html>
+<script language="javascript">
+    
+    $(document).ready(function(){
+        
+        debugger;
+        var $alerts = $("#alerts a[role=alert]");
+        $.each($alerts, function(indexInArray, value){
+            
+            debugger;
+            $(value).click(function() {
+                $.gritter.add({
+                    text: '<span class=\"glyphicon glyphicon-exclamation-sign\" style=\"font-size:14px;\"></span> ' + value.text,
+                    sticky: true,
+                    time: '3000'
+                });
+                return false;
+            });
+        });
+    });
+</script>
