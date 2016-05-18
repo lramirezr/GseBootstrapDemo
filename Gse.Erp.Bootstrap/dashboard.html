@@ -355,17 +355,14 @@
 <script language="javascript">
     
     $(document).ready(function(){
-        
-        debugger;
         var $alerts = $("#alerts a[role=alert]");
         $.each($alerts, function(indexInArray, value){
-            
             debugger;
             $(value).click(function() {
                 $.gritter.add({
                     text: '<span class=\"glyphicon glyphicon-exclamation-sign\" style=\"font-size:14px;\"></span> ' + value.text,
                     sticky: true,
-                    time: '3000'
+                    time: '2000'
                 });
                 return false;
             });
