@@ -121,7 +121,7 @@
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Aplicaciones</h4>
+              <h4>Modulos</h4>
               <span class="text-muted">Something else</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
@@ -353,15 +353,13 @@
   </body>
 </html>
 <script language="javascript">
-    
     $(document).ready(function(){
         var $alerts = $("#alerts a[role=alert]");
         $.each($alerts, function(indexInArray, value){
-            debugger;
             $(value).click(function() {
                 $.gritter.add({
                     text: '<span class=\"glyphicon glyphicon-exclamation-sign\" style=\"font-size:14px;\"></span> ' + value.text,
-                    sticky: true,
+                    sticky: false,
                     time: '2000'
                 });
                 return false;

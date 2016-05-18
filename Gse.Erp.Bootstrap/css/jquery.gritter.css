@@ -24,6 +24,7 @@
 }
 .gritter-item-wrapper {
 	position:relative;
+    /* top | right | bottom | left */
 	margin:0 0 10px 0;
 	background:url('../img/ie-spacer.gif'); /* ie7/8 fix */ 
 }
@@ -58,29 +59,17 @@
 	margin:0;
 	word-wrap:break-word;
 }
-/*.gritter-close {
-	display:none;
-	position:absolute;
-	top:5px;
-	left:3px;
-	background:url(../img/gritter.png) no-repeat left top;
-	cursor:pointer;
-	width:30px;
-	height:30px;
-	text-indent:-9999em;
-}*/
 .gritter-close {
 	display:none;
 	position:absolute;
-	top:0;
-	right:7px;
-	width:15px;
-	height:100%;
-	background:url(https://a-v2.sndcdn.com/assets/images/close-light-3cc615.png) center center no-repeat;
+    top:0;
+    right:7px;
+    background: url(../img/close-light-3cc615.png) center center no-repeat;
 	cursor:pointer;
-    text-indent:-9999em;
+    width: 15px;
+    height: 100%;
+	text-indent:-9999em;
 }
-
 .gritter-title {
 	font-size:14px;
 	font-weight:bold;
